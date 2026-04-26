@@ -1,0 +1,101 @@
+/*
+ * forne.family — Diseño: Minimalismo japonés / Ma (間)
+ * Filosofía: el vacío como presencia. Un único elemento tipográfico.
+ * Paleta: blanco hueso (#F8F6F1), negro carbón (#1C1C1C), azul pizarra (#2D4A7A)
+ * Tipografía: Cormorant Garamond 300 — sin body text
+ */
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+:root {
+  --radius: 0;
+  --background: oklch(0.978 0.005 85);       /* #F8F6F1 blanco hueso */
+  --foreground: oklch(0.16 0.005 30);         /* #1C1C1C negro carbón */
+  --primary: oklch(0.35 0.07 250);            /* #2D4A7A azul pizarra */
+  --primary-foreground: oklch(0.978 0.005 85);
+  --card: oklch(0.978 0.005 85);
+  --card-foreground: oklch(0.16 0.005 30);
+  --popover: oklch(0.978 0.005 85);
+  --popover-foreground: oklch(0.16 0.005 30);
+  --secondary: oklch(0.92 0.003 85);
+  --secondary-foreground: oklch(0.16 0.005 30);
+  --muted: oklch(0.92 0.003 85);
+  --muted-foreground: oklch(0.5 0.005 30);
+  --accent: oklch(0.35 0.07 250);
+  --accent-foreground: oklch(0.978 0.005 85);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.85 0.004 85);
+  --input: oklch(0.85 0.004 85);
+  --ring: oklch(0.35 0.07 250);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Animación de entrada — fade muy lento */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Pulso suave para la inicial */
+@keyframes initialPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.55; }
+}
+
+.forne-enter {
+  animation: fadeIn 2.2s ease-in-out both;
+}
+
+.forne-initial {
+  color: oklch(0.35 0.07 250); /* azul pizarra */
+  animation: initialPulse 4.5s ease-in-out infinite;
+  animation-delay: 2.5s; /* empieza tras el fade-in */
+}
