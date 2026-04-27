@@ -1,4 +1,5 @@
 import express from "express";
+import fs from "fs";
 import { createServer } from "http";
 import path from "path";
 import { fileURLToPath } from "url";
@@ -10,11 +11,14 @@ async function startServer() {
   const app = express();
   const server = createServer(app);
 
-  // Serve static files from dist/public in production
+  // Prefer bundled production assets and fall back to the workspace build
+  // output when the server is started directly from source tooling.
+  const bundledStaticPath = path.resolve(__dirname, "public");
+  const workspaceStaticPath = path.resolve(__dirname, "..", "dist", "public");
   const staticPath =
-    process.env.NODE_ENV === "production"
-      ? path.resolve(__dirname, "public")
-      : path.resolve(__dirname, "..", "dist", "public");
+    process.env.NODE_ENV === "production" || fs.existsSync(bundledStaticPath)
+      ? bundledStaticPath
+      : workspaceStaticPath;
 
   app.use(express.static(staticPath));
 
