@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="124" viewBox="0 0 360 124" fill="none">
+  <rect width="360" height="124" rx="20" fill="#FFFFFF"/>
+  <text x="180" y="52" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="52" font-weight="300" letter-spacing="10" fill="#2E2A24">
+    Fornè
+  </text>
+  <line x1="154" y1="75.5" x2="206" y2="75.5" stroke="#2F6FA3" stroke-opacity="0.45"/>
+  <text x="180" y="96" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-size="15" font-weight="400" letter-spacing="7" fill="#2F6FA3">
+    1933
+  </text>
+</svg>

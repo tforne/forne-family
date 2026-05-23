@@ -1,0 +1,148 @@
+:root {
+  --cream: #F5F2EC;
+  --ink: #18160F;
+  --ink-mid: #7A756A;
+  --ink-faint: #C8C4BB;
+  --gold: #8C7355;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.forne-page {
+  height: 100vh;
+  background: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.8rem 3.5rem;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  opacity: 0;
+  animation: forneIn 1.2s ease 0.2s forwards;
+}
+
+/* ── TOP ── */
+.forne-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forne-logo {
+  font-weight: 300;
+  font-size: 0.95rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+
+.forne-est {
+  font-weight: 300;
+  font-style: italic;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+
+/* ── MIDDLE ── */
+.forne-middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.forne-name {
+  font-weight: 300;
+  font-size: clamp(5rem, 13vw, 10rem);
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  font-style: normal;
+}
+
+.forne-name em {
+  font-style: italic;
+  color: var(--ink-mid);
+}
+
+.forne-statement {
+  font-weight: 300;
+  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--ink-mid);
+  max-width: 520px;
+  border-left: 0.5px solid var(--gold);
+  padding-left: 1.4rem;
+}
+
+.forne-statement em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+/* ── BOTTOM ── */
+.forne-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-top: 0.5px solid var(--ink-faint);
+  padding-top: 1.4rem;
+}
+
+.forne-bottom-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.forne-item {
+  display: flex;
+  gap: 1.8rem;
+  align-items: baseline;
+}
+
+.forne-label {
+  font-weight: 300;
+  font-size: 0.67rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  min-width: 72px;
+}
+
+.forne-value {
+  font-weight: 300;
+  font-size: 0.92rem;
+  color: var(--ink-mid);
+}
+
+.forne-value em {
+  font-style: italic;
+}
+
+/* ── MARK ── */
+.forne-mark svg {
+  width: 64px;
+  height: 64px;
+  opacity: 0.65;
+}
+
+/* ── ANIMATION ── */
+@keyframes forneIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
