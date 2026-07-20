@@ -5,13 +5,16 @@ export default function FornePage() {
     <div className="forne-page">
 
       <div className="forne-top">
-        <span className="forne-logo">Forné</span>
+        <span className="forne-logo" aria-label="forne">
+          <span className="forne-logo-initial">f</span>
+          <span className="forne-logo-rest">orné</span>
+        </span>
         <span className="forne-est">Est. 1989</span>
       </div>
 
       <div className="forne-middle">
         <h1 className="forne-name">
-          For<em>né</em>
+          <span className="forne-name-initial">f</span>or<em>né</em>
         </h1>
         <p className="forne-statement">
           Un criterio que se sostiene<br />

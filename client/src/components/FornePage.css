@@ -36,11 +36,26 @@ body,
 }
 
 .forne-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.1rem;
   font-weight: 300;
   font-size: 0.95rem;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
+  letter-spacing: 0.22em;
   color: var(--ink);
+}
+
+.forne-logo-initial {
+  font-size: 1.55rem;
+  line-height: 0.8;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: -0.08em;
+  transform: translateY(0.05em);
+}
+
+.forne-logo-rest {
+  text-transform: lowercase;
 }
 
 .forne-est {
@@ -63,9 +78,19 @@ body,
   font-weight: 300;
   font-size: clamp(5rem, 13vw, 10rem);
   line-height: 0.9;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--ink);
   font-style: normal;
+  text-transform: lowercase;
+}
+
+.forne-name-initial {
+  display: inline-block;
+  font-style: italic;
+  color: var(--ink);
+  letter-spacing: -0.08em;
+  margin-right: -0.02em;
+  transform: translateY(0.02em);
 }
 
 .forne-name em {

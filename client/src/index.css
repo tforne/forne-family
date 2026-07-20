@@ -78,24 +78,3 @@
   }
 }
 
-/* Animación de entrada — fade muy lento */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-
-/* Pulso suave para la inicial */
-@keyframes initialPulse {
-  0%, 100% { opacity: 1; }
-  50%       { opacity: 0.55; }
-}
-
-.forne-enter {
-  animation: fadeIn 2.2s ease-in-out both;
-}
-
-.forne-initial {
-  color: oklch(0.35 0.07 250); /* azul pizarra */
-  animation: initialPulse 4.5s ease-in-out infinite;
-  animation-delay: 2.5s; /* empieza tras el fade-in */
-}
