@@ -1,9 +1,10 @@
 :root {
-  --cream: #F5F2EC;
-  --ink: #18160F;
-  --ink-mid: #7A756A;
-  --ink-faint: #C8C4BB;
-  --gold: #8C7355;
+  --cream: #f6f1e8;
+  --ink: #1b1612;
+  --ink-mid: #6f6257;
+  --ink-faint: #c8bcaf;
+  --gold: #947253;
+  --gold-soft: #ad8865;
 }
 
 html,
@@ -17,11 +18,13 @@ body,
 
 .forne-page {
   height: 100vh;
-  background: var(--cream);
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.46), transparent 31%),
+    linear-gradient(180deg, #faf6ef 0%, var(--cream) 42%, #efe5d9 100%);
   font-family: 'Cormorant Garamond', Georgia, serif;
-  max-width: 860px;
+  max-width: 840px;
   margin: 0 auto;
-  padding: 2.8rem 3.5rem;
+  padding: 3.25rem 3.9rem 2.75rem;
   display: grid;
   grid-template-rows: auto 1fr auto;
   opacity: 0;
@@ -33,25 +36,29 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.95rem;
 }
 
 .forne-logo {
   display: inline-flex;
   align-items: baseline;
-  gap: 0.1rem;
+  gap: 0.12rem;
   font-weight: 300;
-  font-size: 0.95rem;
-  letter-spacing: 0.22em;
+  font-size: 0.88rem;
+  letter-spacing: 0.17em;
   color: var(--ink);
+  opacity: 0.96;
 }
 
 .forne-logo-initial {
-  font-size: 1.55rem;
-  line-height: 0.8;
+  font-size: 1.22rem;
+  line-height: 0.84;
   font-style: italic;
-  color: var(--gold);
-  letter-spacing: -0.08em;
-  transform: translateY(0.05em);
+  color: var(--gold-soft);
+  letter-spacing: -0.035em;
+  margin-right: 0.045em;
+  transform: translateY(0.025em);
+  opacity: 0.98;
 }
 
 .forne-logo-rest {
@@ -61,9 +68,10 @@ body,
 .forne-est {
   font-weight: 300;
   font-style: italic;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  color: var(--gold);
+  font-size: 0.74rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-soft);
+  opacity: 1;
 }
 
 /* ── MIDDLE ── */
@@ -71,13 +79,16 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.7rem;
 }
 
 .forne-name {
+  display: inline-flex;
+  align-items: flex-end;
   font-weight: 300;
-  font-size: clamp(5rem, 13vw, 10rem);
-  line-height: 0.9;
+  width: fit-content;
+  font-size: clamp(5.15rem, 12.2vw, 9.35rem);
+  line-height: 0.87;
   letter-spacing: -0.03em;
   color: var(--ink);
   font-style: normal;
@@ -88,29 +99,38 @@ body,
   display: inline-block;
   font-style: italic;
   color: var(--ink);
-  letter-spacing: -0.08em;
-  margin-right: -0.02em;
-  transform: translateY(0.02em);
+  font-size: 0.95em;
+  line-height: 0.85;
+  letter-spacing: -0.02em;
+  margin-right: 0.075em;
+  transform: translateY(0.012em);
+  opacity: 1;
+}
+
+.forne-name-rest {
+  display: inline-block;
+  letter-spacing: -0.022em;
 }
 
 .forne-name em {
   font-style: italic;
-  color: var(--ink-mid);
+  color: #877568;
 }
 
 .forne-statement {
   font-weight: 300;
-  font-size: clamp(1.05rem, 1.8vw, 1.45rem);
-  line-height: 1.55;
-  color: var(--ink-mid);
-  max-width: 520px;
+  font-size: clamp(1.08rem, 1.75vw, 1.38rem);
+  line-height: 1.7;
+  color: #73675c;
+  max-width: 490px;
   border-left: 0.5px solid var(--gold);
-  padding-left: 1.4rem;
+  padding-left: 1.7rem;
+  margin-left: 0.42rem;
 }
 
 .forne-statement em {
   font-style: italic;
-  color: var(--gold);
+  color: var(--gold-soft);
 }
 
 /* ── BOTTOM ── */
@@ -119,7 +139,8 @@ body,
   justify-content: space-between;
   align-items: flex-end;
   border-top: 0.5px solid var(--ink-faint);
-  padding-top: 1.4rem;
+  padding-top: 1.7rem;
+  opacity: 0.88;
 }
 
 .forne-bottom-left {
@@ -139,14 +160,14 @@ body,
   font-size: 0.67rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: #b2a496;
   min-width: 72px;
 }
 
 .forne-value {
   font-weight: 300;
   font-size: 0.92rem;
-  color: var(--ink-mid);
+  color: #6d6156;
 }
 
 .forne-value em {
@@ -155,9 +176,9 @@ body,
 
 /* ── MARK ── */
 .forne-mark svg {
-  width: 64px;
-  height: 64px;
-  opacity: 0.65;
+  width: 54px;
+  height: 54px;
+  opacity: 0.46;
 }
 
 /* ── ANIMATION ── */

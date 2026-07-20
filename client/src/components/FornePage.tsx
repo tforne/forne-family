@@ -14,7 +14,8 @@ export default function FornePage() {
 
       <div className="forne-middle">
         <h1 className="forne-name">
-          <span className="forne-name-initial">f</span>or<em>né</em>
+          <span className="forne-name-initial">f</span>
+          <span className="forne-name-rest">or<em>né</em></span>
         </h1>
         <p className="forne-statement">
           Un criterio que se sostiene<br />
